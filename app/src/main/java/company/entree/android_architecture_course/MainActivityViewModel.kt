@@ -2,14 +2,18 @@ package company.entree.android_architecture_course
 
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel : ViewModel() {
-    private var count = 0
+class MainActivityViewModel(startingTotal : Int) : ViewModel() {
+    private var total = 0
 
-    fun getCurrentCount(): Int {
-        return this.count
+    init {
+        this.total = startingTotal
     }
 
-    fun getUpdatedCount(): Int {
-        return ++this.count
+    fun getTotal(): Int {
+        return this.total
+    }
+
+    fun setTotal(input : Int) {
+        this.total += input
     }
 }
