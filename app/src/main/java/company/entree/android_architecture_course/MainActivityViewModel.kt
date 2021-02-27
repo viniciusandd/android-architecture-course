@@ -1,19 +1,20 @@
 package company.entree.android_architecture_course
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel(startingTotal : Int) : ViewModel() {
-    private var total = 0
+    private var total = MutableLiveData<Int>()
+
+    val totalData: LiveData<Int>
+        get() = this.total
 
     init {
-        this.total = startingTotal
-    }
-
-    fun getTotal(): Int {
-        return this.total
+        this.total.value = startingTotal
     }
 
     fun setTotal(input : Int) {
-        this.total += input
+        this.total.value  = (total.value)?.plus(input)
     }
 }
