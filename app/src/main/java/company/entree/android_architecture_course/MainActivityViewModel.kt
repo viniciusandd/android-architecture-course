@@ -1,15 +1,16 @@
 package company.entree.android_architecture_course
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
-    private var count = 0
+    var count = MutableLiveData<Int>()
 
-    fun getCurrentCount(): Int {
-        return this.count
+    init {
+        this.count.value = 0
     }
 
-    fun getUpdatedCount(): Int {
-        return ++this.count
+    fun updatedCount() {
+        this.count.value = (this.count.value)?.plus(1)
     }
 }
