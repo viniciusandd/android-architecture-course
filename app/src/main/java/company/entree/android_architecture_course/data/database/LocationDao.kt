@@ -15,5 +15,5 @@ interface LocationDao {
     suspend fun deleteAll()
 
     @Query(value = "SELECT * FROM locations")
-    suspend fun get(locations: List<Location>)
+    suspend fun get() : List<Location>
 }

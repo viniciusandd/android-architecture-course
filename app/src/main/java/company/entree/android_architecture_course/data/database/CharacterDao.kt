@@ -15,5 +15,5 @@ interface CharacterDao {
     suspend fun deleteAll()
 
     @Query(value = "SELECT * FROM characters")
-    suspend fun get(characters: List<Character>)
+    suspend fun get() : List<Character>
 }

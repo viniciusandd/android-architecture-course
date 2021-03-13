@@ -15,5 +15,5 @@ interface EpisodeDao {
     suspend fun deleteAll()
 
     @Query(value = "SELECT * FROM episodes")
-    suspend fun get(episodes: List<Episode>)
+    suspend fun get() : List<Episode>
 }
