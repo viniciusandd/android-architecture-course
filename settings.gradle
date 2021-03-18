@@ -1,2 +1,4 @@
-include ':app'
+include ':buyer'
 rootProject.name = "AndroidArchitectureCourse"
+include ':seller'
+include ':common'
