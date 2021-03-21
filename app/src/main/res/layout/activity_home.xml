@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:weightSum="3.0"
+        tools:context=".presentation.HomeActivity">
+
+        <Button
+            android:id="@+id/button_character"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Characters"
+            android:textSize="50sp"/>
+
+        <Button
+            android:id="@+id/button_episode"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Episodes"
+            android:textSize="50sp"/>
+
+        <Button
+            android:id="@+id/button_location"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.0"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rounded"
+            android:padding="15dp"
+            android:text="Locations"
+            android:textSize="50sp"/>
+    </LinearLayout>
+</layout>

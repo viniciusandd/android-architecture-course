@@ -24,7 +24,7 @@ class CharacterRepositoryImpl(
         return newListOfCharacters
     }
 
-    suspend fun getCharactersFromAPI() : List<Character> {
+    private suspend fun getCharactersFromAPI() : List<Character> {
         lateinit var characterList: List<Character>
         try {
             val response = this.characterRemoteDataSource.get()
@@ -38,7 +38,7 @@ class CharacterRepositoryImpl(
         return characterList
     }
 
-    suspend fun getCharactersFromDatabase() : List<Character> {
+    private suspend fun getCharactersFromDatabase() : List<Character> {
         lateinit var characterList: List<Character>
         try {
             characterList = this.characterLocalDataSource.get()
@@ -54,7 +54,7 @@ class CharacterRepositoryImpl(
         return characterList
     }
 
-    suspend fun getCharactersFromCache() : List<Character> {
+    private suspend fun getCharactersFromCache() : List<Character> {
         lateinit var characterList: List<Character>
         try {
             characterList = this.characterCacheDataSource.get()
