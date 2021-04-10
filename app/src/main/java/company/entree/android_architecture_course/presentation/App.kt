@@ -1,9 +1,10 @@
 package company.entree.android_architecture_course.presentation
 
 import android.app.Application
+import company.entree.android_architecture_course.BuildConfig
 import company.entree.android_architecture_course.presentation.di.Injector
 import company.entree.android_architecture_course.presentation.di.character.CharacterSubComponent
-import company.entree.android_architecture_course.presentation.di.core.AppComponent
+import company.entree.android_architecture_course.presentation.di.core.*
 
 class App : Application(), Injector {
     private lateinit var appComponent : AppComponent
@@ -11,9 +12,13 @@ class App : Application(), Injector {
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerAppComponent.builder()
+                .appModule(AppModule(applicationContext))
+                .netModule(NetModule(BuildConfig.BASE_URL))
+                .remoteDataModule(RemoteDataModule())
+                .build()
     }
 
     override fun createCharacterSubComponent(): CharacterSubComponent {
-        TODO("Not yet implemented")
+        return appComponent.characterSubComponent().create()
     }
 }

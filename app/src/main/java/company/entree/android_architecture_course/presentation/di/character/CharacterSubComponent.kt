@@ -5,7 +5,7 @@ import dagger.Subcomponent
 
 @CharacterScope
 @Subcomponent(modules = [CharacterModule::class])
-class CharacterSubComponent {
+interface CharacterSubComponent {
     fun inject(characterActivity: CharacterActivity) {}
 
     @Subcomponent.Factory

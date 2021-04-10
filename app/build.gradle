@@ -16,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"https://rickandmortyapi.com/api/\""
     }
 
     buildTypes {
@@ -79,7 +81,7 @@ dependencies {
 
     // Dagger
     implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt("com.google.dagger:dagger-compiler:$dagger_version")
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
